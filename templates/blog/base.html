@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
+<html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-{#        Подключение CSS#}
-    {% include 'snippets/css.html' %}
-{#    Динамический заголово#}
-
-        <title>{% block head_title %}{% endblock head_title %}</title>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
-<body>
-{#    Подключение навигации#}
-    {% include 'snippets/nav.html' %}
-    <div class="container">
-{#    Динамический блок контента#}
-        {% block content %}{% endblock content %}
-    </div>
-    <footer class="footer">
-       <div class="container">
-           <h5><a href="https://github.com/oof3nd"> blog by oof3nd</a></h5>
-           <span class="text-muted">&copy; Тест</span>
-       </div>
-    </footer>
-    <button onclick="topFunction()" id="btnback" title="Наверх">Наверх</button>
-{#   Подключение JS#}
-   {#   {% include 'snippets/js.html' %}#}
-</body>
+    <body>
+        <body>
+            <div class="page-header x-auto text-center">
+                <h1><a href="/">Poroshin Ilya Blog</a></h1>
+            </div>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </body>
+    </body>
 </html>

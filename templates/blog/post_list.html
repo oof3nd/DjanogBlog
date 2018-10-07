@@ -1,11 +1,13 @@
-{% extends "blog/base.html" %}
-{% block head_title %}Главная{% endblock head_title %}
+{% extends 'blog/base.html' %}
+
 {% block content %}
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <p class="lead"> <strong>Вас приветствует, </strong></p>
-        <p class="lead">Открытая онлайн-система обучающего тестирования TESTICH!</p>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-{% endblock content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
